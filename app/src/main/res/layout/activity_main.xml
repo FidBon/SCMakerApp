@@ -62,7 +62,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1. Текстура (PNG-атлас)"
+                    android:text="1. Картинка фона"
                     android:textStyle="bold"
                     android:textSize="16sp"/>
 
@@ -71,7 +71,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:text="Выбрать PNG"/>
+                    android:text="Выбрать картинку"/>
 
                 <ImageView
                     android:id="@+id/imagePreview"
@@ -99,7 +99,66 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="2. Параметры"
+                    android:text="2. Тип фона"
+                    android:textStyle="bold"
+                    android:textSize="16sp"/>
+
+                <RadioGroup
+                    android:id="@+id/radioMode"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:orientation="vertical">
+
+                    <RadioButton
+                        android:id="@+id/radioFlat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Плоская 2D картинка (рекомендую)"
+                        android:checked="true"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Твоя картинка ставится одним прямоугольником на весь экран. Без кусков."
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:layout_marginStart="32dp"
+                        android:layout_marginBottom="8dp"/>
+
+                    <RadioButton
+                        android:id="@+id/radioAtlas"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Атлас спрайтов"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Только если PNG нарисован поверх извлечённого атласа 768×896."
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant"
+                        android:layout_marginStart="32dp"/>
+                </RadioGroup>
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:cardCornerRadius="12dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3. Параметры"
                     android:textStyle="bold"
                     android:textSize="16sp"/>
 
@@ -119,7 +178,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
-                    android:hint="Имя выходного файла (без .sc — добавится)">
+                    android:hint="Имя выходного файла (расширение поправлю)">
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/editFileName"
                         android:layout_width="match_parent"
@@ -150,8 +209,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="Выбери PNG, чтобы начать"
+            android:text="Выбери картинку, чтобы начать"
             android:textColor="?attr/colorOnSurfaceVariant"/>
+
+        <!-- Footer -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="8dp"
+            android:gravity="center"
+            android:text="Create by FidBon"
+            android:textSize="14sp"
+            android:textStyle="bold|italic"
+            android:textColor="?attr/colorPrimary"/>
 
     </LinearLayout>
 </ScrollView>
